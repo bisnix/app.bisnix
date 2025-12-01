@@ -13,203 +13,459 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #fafafa;
-            min-height: 100vh;
+            background: #ffffff;
             color: #1a1a1a;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        header {
-            padding: 80px 0 60px;
+        /* Hero Section */
+        .hero {
             text-align: center;
+            padding: 100px 0 80px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
         }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: #1a1a1a;
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
             letter-spacing: -0.02em;
         }
 
-        .subtitle {
-            font-size: 1.1em;
-            color: #666;
-            font-weight: 400;
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
+        .hero p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #1a1a1a;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05em;
+            transition: all 0.2s ease;
+        }
+
+        .hero-cta:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* Tools Grid */
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding-bottom: 80px;
         }
 
         .tool-card {
-            background: white;
+            background: #ffffff;
+            border: 1.5px solid #e5e5e5;
             border-radius: 12px;
-            padding: 32px;
-            border: 1px solid #e5e5e5;
-            transition: all 0.2s ease;
+            padding: 28px;
+            transition: all 0.3s ease;
+            cursor: pointer;
             position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #1a1a1a;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover::before {
+            transform: scaleX(1);
         }
 
         .tool-card:hover {
             border-color: #1a1a1a;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-card.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .tool-card.disabled:hover {
+            transform: none;
+            border-color: #e5e5e5;
+            box-shadow: none;
         }
 
         .tool-icon {
             font-size: 2.5em;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             display: block;
         }
 
-        .tool-card h2 {
-            font-size: 1.3em;
-            color: #1a1a1a;
-            margin-bottom: 12px;
+        .tool-card h3 {
+            font-size: 1.2em;
             font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a1a;
         }
 
         .tool-card p {
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            font-size: 0.95em;
-        }
-
-        .tool-button {
-            display: inline-flex;
-            align-items: center;
-            background: #1a1a1a;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
             font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.2s ease;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
-        .tool-button:hover {
-            background: #333;
-        }
-
-        .tool-button:disabled {
-            background: #e5e5e5;
-            color: #999;
-            cursor: not-allowed;
-        }
-
-        .status-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #1a1a1a;
-            color: white;
+        .tool-badge {
+            display: inline-block;
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 0.75em;
-            font-weight: 500;
+            font-weight: 600;
+            margin-bottom: 12px;
         }
 
-        .status-badge.coming-soon {
-            background: #f5f5f5;
+        .tool-badge.live {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .tool-badge.soon {
+            background: #f0f0f0;
             color: #999;
         }
 
+        .tool-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tool-link:hover {
+            gap: 8px;
+        }
+
+        /* Featured Section */
+        .featured {
+            background: #f8f9fa;
+            padding: 80px 0;
+            margin: 40px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1.5px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e5e5e5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .featured-content {
+            padding: 24px;
+        }
+
+        .featured-content h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .featured-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .featured-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 40px 0 60px;
+            padding: 60px 0;
             color: #999;
-            font-size: 0.9em;
+            border-top: 1px solid #e5e5e5;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
+            .hero h1 {
+                font-size: 2.5em;
             }
-            
+
             .tools-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Free Tools to Make <span class="highlight">Business</span> Simple</h1>
+            <p>Use free PDF, video, image and other online tools to make your life easier</p>
+            <a href="#tools" class="hero-cta">Explore Tools</a>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
     <div class="container">
-        <header>
-            <h1>Bisnix Business Tools</h1>
-            <p class="subtitle">Simple automation tools for modern businesses</p>
-        </header>
-
-        <div class="tools-grid">
-            <!-- WhatsApp Generator Tool -->
-            <div class="tool-card">
-                <span class="status-badge">Live</span>
-                <div class="tool-icon">💬</div>
-                <h2>WhatsApp Link Generator</h2>
-                <p>Create shareable WhatsApp links with pre-filled messages for customer support and marketing campaigns.</p>
-                <a href="/whatsapp-generator/" class="tool-button">Try Now →</a>
+        <div class="stats">
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Tools Available</p>
             </div>
-
-            <!-- SMS Bomber (Placeholder) -->
-            <div class="tool-card">
-                <span class="status-badge coming-soon">Soon</span>
-                <div class="tool-icon">📱</div>
-                <h2>SMS Campaign Manager</h2>
-                <p>Send bulk SMS messages and track delivery status with detailed analytics and contact management.</p>
-                <button class="tool-button" disabled>Coming Soon</button>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Free Forever</p>
             </div>
-
-            <!-- Email Generator (Placeholder) -->
-            <div class="tool-card">
-                <span class="status-badge coming-soon">Soon</span>
-                <div class="tool-icon">📧</div>
-                <h2>Email Template Builder</h2>
-                <p>Create beautiful, responsive email templates without coding. Design professional newsletters easily.</p>
-                <button class="tool-button" disabled>Coming Soon</button>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Always Online</p>
             </div>
-
-            <!-- Additional Tool Placeholder -->
-            <div class="tool-card">
-                <span class="status-badge coming-soon">Soon</span>
-                <div class="tool-icon">🔗</div>
-                <h2>URL Shortener & Tracker</h2>
-                <p>Shorten URLs and track click analytics with real-time statistics for your marketing campaigns.</p>
-                <button class="tool-button" disabled>Coming Soon</button>
-            </div>
-
-            <!-- More Tools Coming -->
-            <div class="tool-card">
-                <span class="status-badge coming-soon">Soon</span>
-                <div class="tool-icon">📊</div>
-                <h2>Social Media Scheduler</h2>
-                <p>Schedule posts across multiple platforms and analyze engagement metrics from one dashboard.</p>
-                <button class="tool-button" disabled>Coming Soon</button>
-            </div>
-
-            <!-- API Documentation -->
-            <div class="tool-card">
-                <span class="status-badge">Live</span>
-                <div class="tool-icon">⚙️</div>
-                <h2>API & Integration</h2>
-                <p>Integrate Bisnix tools into your applications with full documentation and code examples.</p>
-                <a href="#" class="tool-button">View Docs →</a>
+            <div class="stat-item">
+                <h3>0</h3>
+                <p>Sign Up Required</p>
             </div>
         </div>
-
-        <footer>
-            <p>© 2025 Bisnix Business Tools</p>
-        </footer>
     </div>
+
+    <!-- Tools Section -->
+    <div id="tools" class="container">
+        <div class="section-title">
+            <h2>Our Most Popular Tools</h2>
+            <p>All the tools you need in one place</p>
+        </div>
+
+        <div class="tools-grid">
+            <!-- WhatsApp Generator -->
+            <div class="tool-card">
+                <span class="tool-badge live">Live</span>
+                <div class="tool-icon">💬</div>
+                <h3>WhatsApp Link Generator</h3>
+                <p>Create shareable WhatsApp links with pre-filled messages instantly</p>
+                <a href="/whatsapp-generator/" class="tool-link">Try Now →</a>
+            </div>
+
+            <!-- SMS Campaign -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">📱</div>
+                <h3>SMS Campaign Manager</h3>
+                <p>Send bulk SMS messages and track delivery with analytics</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+
+            <!-- Email Builder -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">📧</div>
+                <h3>Email Template Builder</h3>
+                <p>Design beautiful responsive email templates without coding</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+
+            <!-- URL Shortener -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">🔗</div>
+                <h3>URL Shortener</h3>
+                <p>Shorten URLs and track clicks with real-time analytics</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+
+            <!-- QR Generator -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">📲</div>
+                <h3>QR Code Generator</h3>
+                <p>Create custom QR codes for links, text, and contact info</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+
+            <!-- Image Compressor -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">🖼️</div>
+                <h3>Image Compressor</h3>
+                <p>Compress images without losing quality for faster loading</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+
+            <!-- PDF Tools -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">📄</div>
+                <h3>PDF Converter</h3>
+                <p>Convert documents to PDF and merge multiple files easily</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+
+            <!-- Social Scheduler -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">📊</div>
+                <h3>Social Media Scheduler</h3>
+                <p>Schedule posts across platforms and analyze engagement</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+
+            <!-- Invoice Generator -->
+            <div class="tool-card disabled">
+                <span class="tool-badge soon">Coming Soon</span>
+                <div class="tool-icon">🧾</div>
+                <h3>Invoice Generator</h3>
+                <p>Create professional invoices and receipts in seconds</p>
+                <span class="tool-link">Coming Soon →</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Section -->
+    <div class="featured">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Tools</h2>
+                <p>Premium quality tools, completely free</p>
+            </div>
+
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-image">💬</div>
+                    <div class="featured-content">
+                        <h3>WhatsApp Link Generator</h3>
+                        <p>Generate custom WhatsApp links with pre-filled messages for your business. Perfect for customer support and marketing.</p>
+                        <a href="/whatsapp-generator/" class="featured-link">Try it now →</a>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-image">⚙️</div>
+                    <div class="featured-content">
+                        <h3>API & Integration</h3>
+                        <p>Integrate our tools into your applications with comprehensive API documentation and code examples.</p>
+                        <a href="#" class="featured-link">View docs →</a>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-image">🚀</div>
+                    <div class="featured-content">
+                        <h3>More Tools Coming</h3>
+                        <p>We're constantly adding new tools to help your business grow. Stay tuned for exciting updates.</p>
+                        <a href="#" class="featured-link">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Bisnix Business Tools. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
