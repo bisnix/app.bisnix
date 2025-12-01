@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisnix Business Tools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .tool-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tool-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .tool-button:hover {
+            transform: scale(1.05);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .status-badge.coming-soon {
+            background: #FF9800;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Bisnix Business Tools</h1>
+            <p class="subtitle">Powerful automation tools for your business needs</p>
+        </header>
+
+        <div class="tools-grid">
+            <!-- WhatsApp Generator Tool -->
+            <div class="tool-card">
+                <span class="status-badge">✓ Live</span>
+                <div class="tool-icon">💬</div>
+                <h2>WhatsApp Link Generator</h2>
+                <p>Create shareable WhatsApp links with pre-filled messages. Perfect for customer support, sales, and marketing campaigns. Easily generate links for specific phone numbers with custom messages.</p>
+                <a href="/whatsapp-generator/" class="tool-button">Try Now →</a>
+            </div>
+
+            <!-- SMS Bomber (Placeholder) -->
+            <div class="tool-card">
+                <span class="status-badge coming-soon">Coming Soon</span>
+                <div class="tool-icon">📱</div>
+                <h2>SMS Campaign Manager</h2>
+                <p>Send bulk SMS messages to your customers. Track delivery status and campaign performance with detailed analytics. Manage contacts and templates in one place.</p>
+                <button class="tool-button" disabled style="opacity: 0.6; cursor: not-allowed;">Coming Soon</button>
+            </div>
+
+            <!-- Email Generator (Placeholder) -->
+            <div class="tool-card">
+                <span class="status-badge coming-soon">Coming Soon</span>
+                <div class="tool-icon">📧</div>
+                <h2>Email Template Builder</h2>
+                <p>Create beautiful, responsive email templates without coding. Design professional newsletters and campaign emails. Preview and test across multiple email clients.</p>
+                <button class="tool-button" disabled style="opacity: 0.6; cursor: not-allowed;">Coming Soon</button>
+            </div>
+
+            <!-- Additional Tool Placeholder -->
+            <div class="tool-card">
+                <span class="status-badge coming-soon">In Development</span>
+                <div class="tool-icon">🔗</div>
+                <h2>URL Shortener & Tracker</h2>
+                <p>Shorten long URLs and track click analytics. Monitor campaign performance with real-time statistics. Create branded short links for your marketing campaigns.</p>
+                <button class="tool-button" disabled style="opacity: 0.6; cursor: not-allowed;">Coming Soon</button>
+            </div>
+
+            <!-- More Tools Coming -->
+            <div class="tool-card">
+                <span class="status-badge coming-soon">Planned</span>
+                <div class="tool-icon">📊</div>
+                <h2>Social Media Scheduler</h2>
+                <p>Schedule posts across multiple social media platforms. Analyze engagement metrics and optimize posting times. Manage all your social accounts from one dashboard.</p>
+                <button class="tool-button" disabled style="opacity: 0.6; cursor: not-allowed;">Coming Soon</button>
+            </div>
+
+            <!-- API Documentation -->
+            <div class="tool-card">
+                <span class="status-badge">Available</span>
+                <div class="tool-icon">⚙️</div>
+                <h2>API & Integration</h2>
+                <p>Access our powerful APIs to integrate Bisnix tools into your applications. Full documentation and code examples for multiple programming languages.</p>
+                <a href="#" class="tool-button">View Docs →</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Bisnix Business Tools. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
